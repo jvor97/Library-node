@@ -6,6 +6,7 @@ const path = require('path');
 
 const app = express();
 app.use(morgan('tiny'));
+app.use(express.static(path.join(__dirname,'/public')))
 
 
 app.get('/', (req,res) => {
