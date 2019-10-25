@@ -50,8 +50,17 @@ const books = [
       books
     });
   });
-  bookRouter.route("/single").get((req, res) => {
-    res.send("Hello single book");
+  bookRouter.route("/:id").get((req, res) => {
+    const { id } = req.params;
+    //to iste ako const id = req.params.id
+    res.render('singleBook',{
+        nav: [
+            { link: "/books", title: "Books" },
+            { link: "/authors", title: "Authors" }
+          ],
+          title: "Library",
+          book: books[id]
+    })
   });
   
 module.exports = bookRouter;
