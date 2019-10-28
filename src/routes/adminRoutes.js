@@ -1,5 +1,5 @@
 const express = require("express");
-const debug = require("debug");
+const debug = require("debug")('app:adminRoutes');
 const { MongoClient } = require("mongodb");
 
 const adminRouter = express.Router();
@@ -60,7 +60,8 @@ function router(nav) {
       } catch (error) {
         debug(error.stack);
       }
-    });
+      client.close();
+    })();
   });
   return adminRouter;
 }
