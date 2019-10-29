@@ -12,7 +12,7 @@ function passportConfig(app) {
   passport.deserializeUser((user, done) => {
     done(null, user);
   });
-  require("./strategies/local.strategy.js");
+  require("./strategies/local.strategy.js")();
 }
 
 module.exports = passportConfig;
