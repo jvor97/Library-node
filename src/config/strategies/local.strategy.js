@@ -1,5 +1,5 @@
 const passport = require("passport");
-const { Strtegy } = require("passport-local");
+const { Strategy } = require("passport-local");
 
 function localStrategy() {
   passport.use(
